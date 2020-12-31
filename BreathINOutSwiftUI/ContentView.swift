@@ -23,7 +23,6 @@ struct ContentView: View {
                             .clipShape(Circle()).frame(width: 80, height: 80)
                             .offset(y: -41.0)
                     }
-                    
                     ZStack {
                         RadialGradient(gradient: Gradient(colors: [Color.green, Color.yellow]), center: .center, startRadius: 5, endRadius: 90)
                             .clipShape(Circle()).frame(width: 80, height: 80)
@@ -31,13 +30,12 @@ struct ContentView: View {
                     }
                 }.opacity(0.5)
                 
-                ZStack {//60 Degree
+                ZStack {
                     ZStack {
                         RadialGradient(gradient: Gradient(colors: [Color.green, Color.yellow]), center: .center, startRadius: 5, endRadius: 100)
                             .clipShape(Circle()).frame(width: 80, height: 80)
                             .offset(y: -41.0)
                     }
-                    
                     ZStack {
                         RadialGradient(gradient: Gradient(colors: [Color.green, Color.yellow]), center: .center, startRadius: 5, endRadius: 90)
                             .clipShape(Circle()).frame(width: 80, height: 80)
@@ -45,13 +43,12 @@ struct ContentView: View {
                     }
                 }.opacity(0.5).rotationEffect(Angle(degrees: 60), anchor: .center)
                 
-                ZStack {//60 * 2 Degree
+                ZStack {
                     ZStack {
                         RadialGradient(gradient: Gradient(colors: [Color.green, Color.yellow]), center: .center, startRadius: 5, endRadius: 100)
                             .clipShape(Circle()).frame(width: 80, height: 80)
                             .offset(y: -41.0)
                     }
-                    
                     ZStack {
                         RadialGradient(gradient: Gradient(colors: [Color.green, Color.yellow]), center: .center, startRadius: 5, endRadius: 90)
                             .clipShape(Circle()).frame(width: 80, height: 80)
@@ -72,27 +69,7 @@ struct ContentView: View {
                 .opacity(breath ? 0 : 1)
                 .blendMode(.hardLight)
                 .animation(Animation.easeOut(duration: 4).delay(1.0).repeatForever())
-            
-            
-            Text(textChange ? "Breath In" : "Breath Out")
-                .animation(Animation.easeInOut(duration: 0.01))
-                .foregroundColor(.white)
-                .onAppear(perform: toggleTexxtChange)
-                .scaleEffect(textChange ? 2.5 : 1.0)
-                .animation(Animation.easeOut(duration: 4).delay(1.0).repeatForever(autoreverses: true))
-            
-                
-            
-        }
-        
-        
-    }
-    func toggleTexxtChange() {
-        self.textChange.toggle()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
-            self.toggleTexxtChange()
-        }
-     
+         }
     }
 }
 
